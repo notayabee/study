@@ -45,6 +45,49 @@ let elements = document.querySelectorAll(".title");// по классу .title, 
 //вызов определённого элемента
 let elemenets = document.querySelector("#title")//выбирает только первый элемент // рекомендуется по id вызывать 
 
-//функция для нахождения ближайшено родительского элемента 
 
-остановился на 27:36
+//функция для нахождения ближайшено родительского элемента 
+let ulItems = document.querySelector("#liItem");
+console.log(ulItems.closest("li, .title, #title"));//после скобок c "li" .className - вывод класса этой li, .tagName - название тега
+
+
+// замена содержимого внутри тега
+let ul = ulItems.closest(".title, #title");// задаём функции поиска элементов переменную Ul
+ul.innerHTML = "New text" //заменили всё содержимое ul на New text
+
+
+//замена содержимого внутри input и подобных тегов
+let input = document.querySelector("input[type='text']");
+input.value = "New value";//функция исправления ошибок, из-за значения Null
+if(input != null) {
+    //помещаем функцию сюда
+}
+
+
+//функциия has работает с любым тэгом
+input.hasAttribute("type");
+//пример работы has функции
+if(input.hasAttribute("type"))
+    alert("true");
+
+//функция get
+input.getAttribute("type")
+
+//функция set
+input.setAttribute("data-toggle", "some-value"); //в первых кавычках название атрибута, во вторых значение в атрибуте. Этой функцией можно менять значения внутри любого атрибута
+
+//функция удаления атрибута
+input.removeAttribute("class")//в кавычках атрибут, который хотим убрать
+
+
+//функция обращения к классу и изменению изначения
+input.className("New class")
+
+
+//функция добавления значний в HTML через JS !почти не используется!
+document.write("Something new");
+
+
+//работа с CSS стилями через JS
+input.style.color = ("#333");
+input.style.backgroundColor = ("#333");
